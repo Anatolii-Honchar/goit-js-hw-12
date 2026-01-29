@@ -7,12 +7,154 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  border: solid 1px #4e75ff;
+  border-radius: 5px;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.form input::placeholder {
+  color: rgba(1, 24, 4, 0.39);
+  /* padding-left: 10px; */
+}
+
+.form button,
+.btn-load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: #4e75ff;
+  border: none;
+}
+.btn-load-more {
+  margin-top: 30px;
+  width: 200px;
+}
+
+/* 1. Стилі для самого лоадера (відбувається під час завантаження даних*/
+.loader {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.loader span {
+  width: 10px;
+  height: 10px;
+  background-color: #4e75ff;
+  border-radius: 50%;
+  animation: bounce 2.6s infinite ease-in-out;
+}
+
+/* Послідовність */
+.loader span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loader span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+}
+
+/* 2. Той самий клас-перемикач, якого тобі бракувало */
+.is-hidden {
+  display: none;
+  /* Ця властивість просто ховає елемент */
+  /* або visibility: hidden; або opacity: 0; */
+}
+
+.load-galler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.gallery a {
+}
+
+.gallery {
+  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery img {
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.35);
+}
+
+.inf-list {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.inf-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
